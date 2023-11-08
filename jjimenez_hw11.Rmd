@@ -1,0 +1,70 @@
+---
+title: "Youtube Reccomender System Analysis"
+author: "Jean Jimenez"
+date: "2023-11-07"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+The YouTube recommendation system is a weird one. Just today, I was recommended this video of the [1997 NYC thanksgiving parade barney balloon popping](https://www.youtube.com/watch?v=epgXuMB1sF8). The video was really random and yet, it caught my attention and I watched it (and worth it). Going through the comments, I saw that many people were equally as confused as to why all of a sudden on a random day in November in 2023 were people getting recommended this video. YouTube is a platform that is owned by Google. It allows independent creators to host videos for users to stream. YouTube has an infamous 'algorithm' that is responsible for suggesting videos for users to watch. Many creators blame the 'algorithm' for changes in views and revenue.
+
+# Scenario Design Analysis {.tabset}
+
+## For the Organization (YouTube)
+
+1.  Who are your target users?
+
+    1.  Youtube's target users are anyone who is interested in streaming video content (whether that be on demand, shorts, or live sream) on an online medium.
+
+2.  What are their key goals?
+
+    1.  YouTube's main goals are to maximize advertisement revenue and to maximize content viewership/ viewer retention/ viewer engagement.
+
+3.  How can you help them accomplish these goals?
+
+    1.  YouTube accomplishes this by keeping their users entertained. YouTube forces users to sign in with their Google account if they want to interact. YouTube tracks the videos users watch and recommend similar content. YouTube has billions of hours of content so there are always many options for suggestion. As the user interacts more with the website, the content recommended to them will be more and more tailored.
+
+## For the Customers (Viewers/users)
+
+1.  Who are your target users?
+
+    1.  This is the same as above. Basically anyone interested in watching any form of video entertainment online at a convenient time are target users.
+
+2.  What are their key goals?
+
+    1.  A YouTube user's key goal is to watch videos on the topics that they want to (it could be for learning, news, entertainment, product reviews, etc.)
+
+3.  How can you help them accomplish these goals?
+
+    1.  By logging in with your Google account, watching, and engaging with videos (subscribing, liking, commenting), YouTube's algorithm becomes better and tailors the recommended videos to you.
+
+# Reverse Engineering
+
+Users are encouraged to log-in to YouTube. While it is not necessary, the following are roadblocks that essentially force viewers into sign-ing in:
+
+-   If you want to subscribe to a channel
+
+-   If you want to Like or Comment on a video
+
+-   If you'd like to chat on a live stream
+
+-   If you'd like to donate to a live stream
+
+-   If you want to watch age-restricted content (essentially anything that violates YouTube policy. Many news on conflicts are age restricted)
+
+After users sign in, they are recommended the most popular videos on the platform, as well as whatever they were doing when they signed in. Most likely is that as the user keeps watching and interacting, the algorithm starts to suggest those types of videos. Amount of time spent on video is tracked. If a lot of time is spent on video, suggest that type of video (the videos have tags). If a user spends small amount of time on a video, suggest less of that. If the user likes and comments on something, suggest more content from that same creator. Also, users are recommended stuff that people that have similar interest watch.
+
+# Recommendations for Improvement
+
+Perhaps since YouTube is owned by Google they use Google search history to generate recommendations of videos to watch. Maybe they can go one step further and use Google Chrome internet history and cookies to generate video suggestions. If user has an Android, use the phone data (google assistant/ song search/ maps, etc). All of these improvements are VERY invasive privacy wise and will never happen hopefully. However, the data obtained can possibly help generate very very good suggestions on things the user is interested in.
+
+YouTube has a dislike button but it doesn't use much. YouTube should implement a Reddit-like system where videos that have net-negative likes are recommended less compared to videos that have a big net positive likes.
+
+Allow non-premium members to download videos. By allowing offline video viewing, you can track and recommend those videos that are mostly downloaded (because they are probably good since people downloaded them to watch when no internet access).
